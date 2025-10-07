@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="swe4.sos.gui.controller.TimeOptionPopupController"
+      stylesheets="@../css/styles.css"
+      spacing="10"
+      prefWidth="300">
+
+    <Label text="Add Time Option" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Date:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="datePicker" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+        <Label text="Time:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <Spinner fx:id="hourSpinner" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                 editable="true" initialValue="12">
+            <valueFactory>
+                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="23" initialValue="12"/>
+            </valueFactory>
+        </Spinner>
+
+        <Label text=":" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+
+        <Spinner fx:id="minuteSpinner" GridPane.rowIndex="1" GridPane.columnIndex="3"
+                 editable="true" initialValue="0">
+            <valueFactory>
+                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="59" initialValue="0" amountToStepBy="15"/>
+            </valueFactory>
+        </Spinner>
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel" onAction="#handleCancel" styleClass="small-button"/>
+        <Button text="Add" onAction="#handleAdd" styleClass="small-button"/>
+    </HBox>
+</VBox>

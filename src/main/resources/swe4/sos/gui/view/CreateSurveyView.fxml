@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="swe4.sos.gui.controller.CreateSurveyController"
+      stylesheets="@../css/styles.css"
+      spacing="10">
+
+    <Label text="Create New Survey" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Title:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="titleField" GridPane.rowIndex="0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS"/>
+
+        <Label text="Description:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextArea fx:id="descriptionField" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                  prefRowCount="4" wrapText="true" GridPane.hgrow="ALWAYS"/>
+    </GridPane>
+
+    <Label text="Time Options:" style="-fx-font-weight: bold;"/>
+    <ListView fx:id="optionsList" prefHeight="150">
+        <placeholder>
+            <Label text="No time options added yet"/>
+        </placeholder>
+    </ListView>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Add Time Option" onAction="#handleAddOption" styleClass="dynamic-button"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Cancel" onAction="#handleCancel" styleClass="dynamic-button"/>
+        <Button text="Create Survey" onAction="#handleSubmit" styleClass="dynamic-button"/>
+    </HBox>
+</VBox>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="15" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="swe4.sos.gui.controller.SurveyController"
+      stylesheets="@../css/styles.css"
+      prefWidth="600" prefHeight="500">
+
+    <Label fx:id="titleLabel" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+    <Label fx:id="descriptionLabel" wrapText="true" style="-fx-font-size: 14px;"/>
+
+    <Label text="Options:" style="-fx-font-weight: bold;"/>
+    <ListView fx:id="optionsList" prefHeight="300"/>
+
+    <Button fx:id="submitButton" text="Submit Votes" onAction="#handleSubmit"
+            styleClass="dynamic-button" visible="false"/>
+
+    <Button fx:id="revokeButton" text="Revoke Votes" onAction="#handleRevoke"
+            styleClass="dynamic-button" visible="false"/>
+
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="closeSurveyButton" text="Close Survey" onAction="#handleCloseSurvey"
+                styleClass="dynamic-button" visible="false"/>
+        <Button fx:id="inviteSurveyButton" text="Invite Participants" onAction="#handleInvite" styleClass="dynamic-button"/>
+        <Button text="← Back to Dashboard" onAction="#handleBack" styleClass="dynamic-button"/>
+    </HBox>
+</VBox>

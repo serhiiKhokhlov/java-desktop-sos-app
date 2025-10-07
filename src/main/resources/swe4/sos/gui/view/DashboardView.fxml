@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="800" prefWidth="600" stylesheets="@../css/styles.css"
+            xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            fx:controller="swe4.sos.gui.controller.DashboardController">
+
+    <top>
+        <VBox spacing="10">
+            <!-- Button Row -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Button onAction="#handleAddSurvey" styleClass="dynamic-button" text="Add Survey" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleLogout" styleClass="dynamic-button" text="Logout" />
+            </HBox>
+
+            <!-- My Surveys Filter -->
+            <VBox spacing="5">
+                <Label text="My Surveys Filter" />
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="mySurveysFilter"
+                               promptText="Search my surveys..."
+                               styleClass="filter-field"
+                               prefWidth="300"/>
+                    <CheckBox fx:id="personalOnlyCheckbox" text="Only my creations" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="20">
+            <!-- My Surveys List -->
+            <VBox spacing="5">
+                <Label text="My Surveys" />
+                <ScrollPane fitToWidth="true">
+                    <ListView fx:id="listViewOne" />
+                </ScrollPane>
+            </VBox>
+
+            <!-- Invitations Filter -->
+            <VBox spacing="5">
+                <Label text="Invitations Filter" />
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="invitationsFilter"
+                               promptText="Search invitations..."
+                               styleClass="filter-field"
+                               prefWidth="300"/>
+                </HBox>
+            </VBox>
+
+            <!-- Survey Invitations List -->
+            <VBox spacing="5">
+                <Label text="Survey Invitations" />
+                <ListView fx:id="listViewTwo" />
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
