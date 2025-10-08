@@ -87,3 +87,20 @@ From version 3 onward, all data is persisted in a **MySQL** database:
 - Maven  
 - Docker  
 - PowerShell (Windows)
+
+## To start the project
+
+In case you want to start without server and DB. (Client-Only, No data persistence)
+### 1. Go to `/src/main/java/swe4/sos/gui/GuiDemo.java` and start the class here.
+
+---
+
+Normal startup with server and DB.
+### 1. Start the Docker Desktop
+### 2. Go to `/scripts` folder and start the scripts in the following order:
+- `start-mysql-server.ps1` - starts the mysql container
+- `create-sos-schema.ps1` - creates the schema in the existing mysql container
+### 3. Go to `/src/main/java/swe4/sos/server/server/Server.java` and start the class here.
+### 4. Go to `/src/main/java/swe4/sos/server/client/Client.java` and start the class here (Both Server and Client how to be running parallely).
+    
+
