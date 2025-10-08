@@ -17,5 +17,5 @@ elseif ($containerExists) {
 }
 else {
   Write-Host -ForegroundColor Yellow "creating and starting MySQL container ..."
-  docker run --name mysql -d -p 3306:3306 -e "MYSQL_ALLOW_EMPTY_PASSWORD=1" --network phonebook-net mysql:9 2>&1 | Out-Null
+  docker run --name mysql -d -p 3306:3306 -e "MYSQL_ALLOW_EMPTY_PASSWORD=1" --network $networkName mysql:9 2>&1 | Out-Null
 }
