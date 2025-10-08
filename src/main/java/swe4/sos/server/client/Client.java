@@ -14,6 +14,10 @@ public final class Client extends Application implements ClientCallback {
 
   private Repository repository;
 
+  public static void main(String[] args) {
+    launch(args);
+  }
+
   @Override
   public void init() throws Exception {
     // Read host from parameters or default to localhost
